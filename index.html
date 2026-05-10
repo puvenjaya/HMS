@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Medica Solution | Modern Herbal Rituals</title>
+    <meta name="description" content="Premium natural remedies, wellness products, and digital masterclasses. Science meets discipline with Herbal Medica Solution.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons for elegant UI -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#FAF9F6',
+                            primary: '#2E7D32',
+                            secondary: '#8BC34A',
+                            text: '#333333'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Playfair Display"', 'serif'],
+                        body: ['Inter', 'sans-serif']
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('./assets/modern_herbal_hero.png')"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-balance { text-wrap: balance; }
+        }
+        
+        body {
+            @apply bg-brand-bg text-brand-text font-body antialiased selection:bg-brand-secondary selection:text-white;
+        }
+        
+        h1, h2, h3 {
+            @apply font-heading text-balance;
+        }
+
+        .glass-nav {
+            @apply bg-brand-bg/80 backdrop-blur-md border-b border-gray-200/50;
+        }
+        
+        .btn-primary {
+            @apply inline-flex items-center justify-center px-6 py-3 bg-brand-primary text-white font-medium rounded transition-all duration-300 hover:bg-brand-secondary hover:shadow-lg hover:-translate-y-0.5;
+        }
+        
+        .btn-secondary {
+            @apply inline-flex items-center justify-center px-6 py-3 border-2 border-brand-primary text-brand-primary font-medium rounded transition-all duration-300 hover:bg-brand-primary hover:text-white bg-transparent;
+        }
+
+        .card-hover {
+            @apply transition-all duration-500 hover:shadow-xl hover:-translate-y-1 bg-white rounded-lg overflow-hidden border border-gray-100;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-3 group">
+                        <img class="h-[60px] w-auto transition-transform duration-300 group-hover:scale-105" src="./assets/herbal-medica-logo.png" alt="Herbal Medica Solution Logo">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-sm font-medium hover:text-brand-primary transition-colors">Philosophy</a>
+                    <a href="#products" class="text-sm font-medium hover:text-brand-primary transition-colors">Apothecary</a>
+                    <a href="#masterclasses" class="text-sm font-medium hover:text-brand-primary transition-colors">Masterclasses</a>
+                    <a href="#products" class="btn-primary text-sm py-2 px-4 !rounded-full">Shop Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-text hover:text-brand-primary focus:outline-none p-2">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-bg border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#about" class="block px-3 py-3 text-base font-medium hover:bg-gray-50 rounded text-center">Philosophy</a>
+                <a href="#products" class="block px-3 py-3 text-base font-medium hover:bg-gray-50 rounded text-center">Apothecary</a>
+                <a href="#masterclasses" class="block px-3 py-3 text-base font-medium hover:bg-gray-50 rounded text-center">Masterclasses</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- 1. Hero Section -->
+        <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0 bg-brand-bg">
+                <img src="./assets/modern_herbal_hero.png" alt="Modern Apothecary" class="w-full h-full object-cover object-center animate-[pulse_10s_ease-in-out_infinite] scale-105 opacity-80">
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-bg/95 via-brand-bg/80 to-transparent"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-sm font-medium mb-6 backdrop-blur-sm">
+                        <i class="ph ph-leaf"></i> Pure Nature, Amplified
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold text-brand-text mb-6 leading-tight drop-shadow-sm">
+                        Modern Herbal <br/><span class="italic text-brand-primary">Rituals</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-10 max-w-xl font-light leading-relaxed">
+                        Elevate your well-being with premium botanical formulas crafted for the dedicated individual.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#products" class="btn-primary text-lg !px-8">
+                            Explore Our Blends <i class="ph ph-arrow-right ml-2"></i>
+                        </a>
+                        <a href="#about" class="btn-secondary text-lg !px-8 bg-white/50 backdrop-blur-sm">
+                            Our Philosophy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Us (Our Philosophy) -->
+        <section id="about" class="py-24 bg-white relative overflow-hidden">
+            <!-- Decorative accent -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-brand-secondary blur-3xl opacity-10 pointer-events-none"></div>
+            
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <i class="ph ph-plant text-5xl text-brand-primary mb-6 mx-auto opacity-80"></i>
+                <h2 class="text-4xl md:text-5xl font-bold mb-10 text-brand-text">The Honest Truth: <br/><span class="text-brand-primary">Science Meets Discipline</span></h2>
+                <div class="relative">
+                    <i class="ph-fill ph-quotes text-4xl text-gray-200 absolute -top-4 -left-6"></i>
+                    <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-light relative z-10 px-8">
+                        We believe in the efficacy of natural remedies because we have experienced the results firsthand. However we also believe in radical transparency. Herbal supplements are not magic pills. True vitality is a partnership between nature's most potent ingredients and your personal discipline. Our products are designed to amplify your hard work. They work best when combined with mindful dietary choices, portion control, and an active lifestyle. We provide the natural tools while you provide the dedication.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. The Medica Standard -->
+        <section class="py-20 bg-brand-bg border-y border-gray-200/50 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-brand-text">The Medica Standard</h2>
+                    <div class="h-1 w-20 bg-brand-primary mx-auto mt-6 rounded-full opacity-80"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <!-- Standard 1 -->
+                    <div class="text-center group p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100">
+                        <div class="w-16 h-16 mx-auto bg-brand-bg rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-primary transition-colors duration-300">
+                            <i class="ph ph-shield-check text-3xl text-brand-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Strict Quality Control</h3>
+                        <p class="text-gray-600 font-light">Every ingredient is rigorously tested for purity, potency, and safety before entering our facility.</p>
+                    </div>
+                    
+                    <!-- Standard 2 -->
+                    <div class="text-center group p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100">
+                        <div class="w-16 h-16 mx-auto bg-brand-bg rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-primary transition-colors duration-300">
+                            <i class="ph ph-flask text-3xl text-brand-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Professional Integrity</h3>
+                        <p class="text-gray-600 font-light">Formulated by certified herbalists and backed by contemporary research for optimal efficacy.</p>
+                    </div>
+                    
+                    <!-- Standard 3 -->
+                    <div class="text-center group p-8 bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100">
+                        <div class="w-16 h-16 mx-auto bg-brand-bg rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-primary transition-colors duration-300">
+                            <i class="ph ph-medal text-3xl text-brand-primary group-hover:text-white transition-colors"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Operational Excellence</h3>
+                        <p class="text-gray-600 font-light">Manufactured in certified facilities maintaining the highest standard of hygiene and precision.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Product Gallery -->
+        <section id="products" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                    <div class="max-w-2xl">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-4">The Apothecary Collection</h2>
+                        <p class="text-gray-600 font-light text-lg">Our signature botanical blends crafted for specific wellness goals.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product 1 -->
+                    <div class="card-hover group">
+                        <div class="relative h-72 bg-brand-bg overflow-hidden flex items-center justify-center">
+                            <img src="./assets/mens_vitality.png" alt="Men's Vitality" class="h-full w-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-primary shadow-sm">Bestseller</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Men's Vitality</h3>
+                            <p class="text-sm text-gray-500 mb-6 h-10 line-clamp-2 font-light">A potent blend supporting natural energy, stamina, and hormonal balance.</p>
+                            <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                                <span class="font-bold text-xl">$45.00</span>
+                                <button class="btn-primary py-2 px-5 text-sm !rounded-full">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="card-hover group">
+                        <div class="relative h-72 bg-brand-bg overflow-hidden flex items-center justify-center">
+                            <img src="./assets/detox_tea.png" alt="Detox Tea" class="h-full w-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Detox Tea</h3>
+                            <p class="text-sm text-gray-500 mb-6 h-10 line-clamp-2 font-light">Gentle daily cleansing herbs to support liver function and digestion.</p>
+                            <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                                <span class="font-bold text-xl">$28.00</span>
+                                <button class="btn-primary py-2 px-5 text-sm !rounded-full">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="card-hover group">
+                        <div class="relative h-72 bg-brand-bg overflow-hidden flex items-center justify-center">
+                            <img src="./assets/herbal_soups.png" alt="Herbal Soups" class="h-full w-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Traditional Herbal Soups</h3>
+                            <p class="text-sm text-gray-500 mb-6 h-10 line-clamp-2 font-light">Nourishing broths formulated for seasonal immunity and deep cellular hydration.</p>
+                            <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                                <span class="font-bold text-xl">$35.00</span>
+                                <button class="btn-primary py-2 px-5 text-sm !rounded-full">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="card-hover group">
+                        <div class="relative h-72 bg-brand-bg overflow-hidden flex items-center justify-center">
+                            <img src="./assets/skin_relief_cream.png" alt="Skin Relief Cream" class="h-full w-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Skin Relief Cream</h3>
+                            <p class="text-sm text-gray-500 mb-6 h-10 line-clamp-2 font-light">Soothing botanical extracts to calm irritation and restore the skin barrier.</p>
+                            <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                                <span class="font-bold text-xl">$42.00</span>
+                                <button class="btn-primary py-2 px-5 text-sm !rounded-full">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="card-hover group">
+                        <div class="relative h-72 bg-brand-bg overflow-hidden flex items-center justify-center">
+                            <img src="./assets/ashwagandha_latte.png" alt="Ashwagandha Latte" class="h-full w-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Ashwagandha Latte</h3>
+                            <p class="text-sm text-gray-500 mb-6 h-10 line-clamp-2 font-light">An evening ritual for stress support and deeply restorative sleep.</p>
+                            <div class="flex items-center justify-between border-t border-gray-100 pt-4">
+                                <span class="font-bold text-xl">$32.00</span>
+                                <button class="btn-primary py-2 px-5 text-sm !rounded-full">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Digital Wellness Masterclasses -->
+        <section id="masterclasses" class="py-24 bg-brand-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-primary font-semibold tracking-wider uppercase text-sm mb-3 block">Education</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Empower Your Health</h2>
+                    <p class="text-gray-600 font-light text-lg">Knowledge is the foundation of lasting vitality. Master the principles of natural wellness through our exclusive digital curriculum.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Course 1 -->
+                    <div class="card-hover group bg-white flex flex-col">
+                        <div class="relative h-56 overflow-hidden cursor-pointer">
+                            <img src="./assets/course_1.png" alt="Herbal Foundation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                                <div class="w-14 h-14 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-brand-primary shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="ph-fill ph-play text-xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 text-xs font-semibold text-brand-secondary mb-3 uppercase tracking-wider">
+                                <i class="ph ph-video-camera"></i> Video Module
+                            </div>
+                            <h3 class="text-xl font-bold mb-6 flex-grow">The Herbal Foundation: Safe Consumption & Best Practices</h3>
+                            <button class="w-full btn-secondary mt-auto">Enroll Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 2 -->
+                    <div class="card-hover group bg-white flex flex-col">
+                        <div class="relative h-56 overflow-hidden cursor-pointer">
+                            <img src="./assets/course_2.png" alt="Preventative Wellness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                                <div class="w-14 h-14 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-brand-primary shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="ph-fill ph-play text-xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 text-xs font-semibold text-brand-secondary mb-3 uppercase tracking-wider">
+                                <i class="ph ph-video-camera"></i> Video Module
+                            </div>
+                            <h3 class="text-xl font-bold mb-6 flex-grow">Preventative Wellness: Building Your Natural Defense System</h3>
+                            <button class="w-full btn-secondary mt-auto">Enroll Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Course 3 -->
+                    <div class="card-hover group bg-white flex flex-col">
+                        <div class="relative h-56 overflow-hidden cursor-pointer">
+                            <img src="./assets/course_3.png" alt="Holistic Vitality" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/20 transition-colors">
+                                <div class="w-14 h-14 bg-white/90 backdrop-blur rounded-full flex items-center justify-center text-brand-primary shadow-lg group-hover:scale-110 transition-transform">
+                                    <i class="ph-fill ph-play text-xl ml-1"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 text-xs font-semibold text-brand-secondary mb-3 uppercase tracking-wider">
+                                <i class="ph ph-video-camera"></i> Video Module
+                            </div>
+                            <h3 class="text-xl font-bold mb-6 flex-grow">Holistic Vitality: Managing Daily Health Naturally</h3>
+                            <button class="w-full btn-secondary mt-auto">Enroll Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. International Compliance -->
+        <section class="py-16 bg-white border-t border-gray-100">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-brand-bg rounded-2xl p-8 md:p-10 border border-gray-100 flex flex-col md:flex-row gap-8 items-center shadow-sm">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
+                        <i class="ph ph-globe-hemisphere-west text-3xl text-brand-primary"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">EU & UK Compliance Notice</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed font-light">
+                            Herbal Medica Solution adheres strictly to international safety standards. All our products available for EU and UK customers comply fully with local regulatory frameworks. We highly recommend our alcohol-free ritual guidelines for optimal extraction and safe, daily consumption. Please review product labels for localized dosage recommendations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Footer -->
+    <footer class="bg-brand-primary text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white/10 p-4 rounded-xl inline-block mb-6 backdrop-blur-sm">
+                        <img src="./assets/herbal-medica-logo.png" alt="Logo" class="h-10 brightness-0 invert">
+                    </div>
+                    <p class="text-green-100 text-sm leading-relaxed mb-6 font-light">
+                        Science meets discipline. Empowering your natural vitality through exceptional herbal formulations.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-brand-secondary transition-colors"><i class="ph-fill ph-instagram-logo text-2xl"></i></a>
+                        <a href="#" class="text-white hover:text-brand-secondary transition-colors"><i class="ph-fill ph-facebook-logo text-2xl"></i></a>
+                        <a href="#" class="text-white hover:text-brand-secondary transition-colors"><i class="ph-fill ph-twitter-logo text-2xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-heading">Contact Us</h4>
+                    <ul class="space-y-4 text-green-100 text-sm font-light">
+                        <li class="flex items-start gap-3">
+                            <i class="ph ph-map-pin text-xl text-brand-secondary mt-0.5"></i>
+                            <span>123 Botanical Way<br>Wellness District, CA 90210</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph ph-envelope text-xl text-brand-secondary"></i>
+                            <a href="mailto:hello@herbalmedica.com" class="hover:text-white transition-colors">hello@herbalmedica.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph ph-phone text-xl text-brand-secondary"></i>
+                            <span>1-800-HERB-MED</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-heading">Quick Links</h4>
+                    <ul class="space-y-3 text-green-100 text-sm font-light">
+                        <li><a href="#about" class="hover:text-white transition-colors">Our Philosophy</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Shop Products</a></li>
+                        <li><a href="#masterclasses" class="hover:text-white transition-colors">Masterclasses</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Shipping & Returns</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-heading">The Herbalist Dispatch</h4>
+                    <p class="text-green-100 text-sm mb-4 font-light">Subscribe for wellness insights and exclusive offers.</p>
+                    <form class="flex flex-col gap-3">
+                        <input type="email" placeholder="Your email address" class="px-4 py-3 bg-white/10 border border-white/20 rounded-md text-white placeholder-green-100 focus:outline-none focus:border-brand-secondary focus:ring-1 focus:ring-brand-secondary text-sm transition-all">
+                        <button type="submit" class="bg-brand-secondary text-brand-primary font-bold py-3 px-4 rounded-md hover:bg-white transition-colors text-sm shadow-lg hover:shadow-xl">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-green-200 font-light">
+                <p>&copy; 2026 Herbal Medica Solution. All rights reserved.</p>
+                <a href="https://github.com/herbal-medica" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-white transition-colors">
+                    <i class="ph-fill ph-github-logo text-xl"></i> Open Source Repository
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar blur effect on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-sm');
+                navbar.classList.replace('bg-brand-bg/80', 'bg-white/95');
+            } else {
+                navbar.classList.remove('shadow-sm');
+                navbar.classList.replace('bg-white/95', 'bg-brand-bg/80');
+            }
+        });
+    </script>
+</body>
+</html>
